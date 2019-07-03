@@ -12,6 +12,7 @@ export class RoundComponent implements OnChanges {
   @Input() ball: any;
   @Input() waitingForRound: boolean;
   @Input() resultsInProgress: boolean;
+  @Input() roundStarting: boolean;
   ballsToShow: any[] = [
     { index: 0, value: 0, isOdd: true },
     { index: 1, value: 0, isOdd: true },
@@ -78,10 +79,10 @@ export class RoundComponent implements OnChanges {
           this.ball = this.balls[this.balls.length - 1];
         }
       }
-
     } else {
       for (let i = 0; i < this.results.length; i++) {
         this.ballsToShow[i].value = this.results[i].ball;
+        this.ballsToShow[i].isOdd = false;
       }
     }
   }

@@ -1,12 +1,12 @@
 <div class="footer">
-  <div class="left" *ngIf="roundInProgress || resultsInProgress">
+  <div class="left" *ngIf="roundInProgress || resultsInProgress || roundStarting">
     <div>
       <div>OVER</div>
       <div>UNDER</div>
     </div>
     <div class="over-under">{{ firstFiveSum }}</div>
   </div>
-  <div class="right" *ngIf="roundInProgress || resultsInProgress">
+  <div class="right" *ngIf="roundInProgress || resultsInProgress || roundStarting">
     <div>
       <div>Even</div>
       <div class="progress">

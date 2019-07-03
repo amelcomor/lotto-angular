@@ -11,7 +11,9 @@ export class FooterComponent implements OnInit, OnChanges {
   @Input() roundInProgress: boolean;
   @Input() countdownInProgress: boolean;
   @Input() resultsInProgress:boolean;
+  @Input() roundStarting:boolean;
   @Input() balls: any[];
+  @Input() results: any[];
   oddTotal: number;
   evenTotal: number;
   odds: number[];
@@ -21,7 +23,9 @@ export class FooterComponent implements OnInit, OnChanges {
   constructor() {}
 
   ngOnInit() {
-    environment
+    if(this.resultsInProgress){
+      this.balls=this.results;
+    }
     this.initData();
     if (this.balls && this.balls.length > 0) {
       if (this.balls.length >= environment.overUnderLimit) {

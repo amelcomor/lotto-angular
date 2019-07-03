@@ -9,17 +9,18 @@ import { environment } from 'src/environments/environment';
 })
 export class AppComponent {
   isConnected: boolean;
-  countdownInProgress;
-  roundInProgress;
-  waitingForRound;
-  resultsInProgress;
+  countdownInProgress: boolean;
+  roundInProgress: boolean;
+  waitingForRound: boolean;
+  resultsInProgress: boolean;
+  roundStarting: boolean;
   currentBall: any;
   results: any[];
   odds: any[];
-  balls = [];
+  balls: any[];
   counterTotal: number;
   countdown: number;
-  loading;
+  loading: boolean;
 
   constructor(private socketService: SocketService) {
     this.loading = true;
@@ -29,6 +30,7 @@ export class AppComponent {
         switch (socketData.type) {
           case 'state':
             if (socketData.data.type == 'countdown') {
+              console.log('COUNTDOWN');
               this.odds = socketData.data.odds;
               this.waitingForRound = true;
               this.roundInProgress = false;
@@ -36,22 +38,27 @@ export class AppComponent {
               this.resultsInProgress = false;
             }
             if (socketData.data.type == 'ball') {
+              console.log('BALL');
               this.balls = socketData.data.balls;
               this.odds = socketData.data.odds;
               this.roundInProgress = true;
               this.waitingForRound = false;
               this.countdownInProgress = false;
               this.resultsInProgress = false;
+              this.roundStarting=false;
             }
             if (socketData.data.type == 'new') {
+              console.log('NEW');
               this.odds = socketData.data.odds;
               this.balls = socketData.data.balls;
               this.roundInProgress = false;
-              this.waitingForRound = true;
+              this.waitingForRound = false;
               this.resultsInProgress = false;
               this.countdownInProgress = false;
+              this.roundStarting=true;
             }
             if (socketData.data.type == 'results') {
+              console.log('RESULTS');
               this.results = socketData.data.balls;
               this.roundInProgress = false;
               this.waitingForRound = false;
@@ -60,20 +67,26 @@ export class AppComponent {
             }
             break;
           case 'new':
+            console.log('NEW');
             this.balls = [];
             this.results = [];
             this.odds = socketData.data.odds;
             this.currentBall = undefined;
-            this.roundInProgress = true;
-            this.waitingForRound = true;
+            this.roundInProgress = false;
+            this.waitingForRound = false;
             this.resultsInProgress = false;
             this.countdownInProgress = false;
+              this.roundStarting=true;
             break;
           case 'ball':
+            console.log('BALL');
             this.currentBall = socketData.data;
             this.waitingForRound = false;
+            this.roundStarting=false;
+            this.roundInProgress=true;
             break;
           case 'results':
+            console.log('RESULTS');
             this.results = socketData.data.balls;
             this.roundInProgress = false;
             this.countdownInProgress = false;
@@ -81,6 +94,7 @@ export class AppComponent {
             this.resultsInProgress = true;
             break;
           case 'countdown':
+            console.log('COUNTDOWN');
             this.countdown = socketData.data.delay;
             this.counterTotal = socketData.data.delay;
             this.roundInProgress = false;

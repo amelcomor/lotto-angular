@@ -12,20 +12,23 @@ export class CountdownComponent implements OnInit {
 
   ngOnInit() {
     this.countTime();
+    if (this.countdown > 0) {
+      setInterval(() => {
+        this.countTime();
+      }, 1000);
+    }
   }
 
   countTime() {
     this.counter.minutes = Math.floor(this.countdown / 60).toString();
     this.counter.seconds = (this.countdown % 60).toString();
-    setInterval(() => {
-      if (this.countdown >= 0) {
-        this.counter.minutes = Math.floor(this.countdown / 60).toString();
-        this.counter.seconds = (this.countdown % 60).toString();
-        if (parseInt(this.counter.seconds, 10) < 10) {
-          this.counter.seconds = `0${this.counter.seconds}`;
-        }
-        this.countdown--;
+    if (this.countdown >= 0) {
+      this.counter.minutes = Math.floor(this.countdown / 60).toString();
+      this.counter.seconds = (this.countdown % 60).toString();
+      if (parseInt(this.counter.seconds, 10) < 10) {
+        this.counter.seconds = `0${this.counter.seconds}`;
       }
-    }, 1000);
+      this.countdown--;
+    }
   }
 }
