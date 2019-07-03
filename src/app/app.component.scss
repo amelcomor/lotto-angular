@@ -1,0 +1,14 @@
+.wrapper {
+    height: 100vh;
+    .content {
+        padding: 0 7px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 48px;
+        bottom: 35px;
+        background-color: #286ED0;
+        overflow-y: hidden;
+    }
+
+}

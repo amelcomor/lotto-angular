@@ -1,0 +1,32 @@
+<div class="wrapper"
+     *ngIf="!loading">
+  <app-header></app-header>
+
+  <div class="content">
+    <app-countdown *ngIf="countdownInProgress"
+                   [countdown]="countdown"
+                   [counterTotal]="counterTotal"></app-countdown>
+
+    <app-round *ngIf="roundInProgress || resultsInProgress || waitingForRound"
+               [odds]="odds"
+               [waitingForRound]="waitingForRound"
+               [resultsInProgress]="resultsInProgress"
+               [results]="results"
+               [ball]="currentBall"
+               [balls]="balls"></app-round>
+  </div>
+
+  <app-footer [balls]="balls"
+              [roundInProgress]="roundInProgress"
+              [resultsInProgress]="resultsInProgress"
+              [countdownInProgress]="countdownInProgress"
+              [ball]="currentBall"></app-footer>
+</div>
+
+<div
+     style="position: absolute; top:80%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 20px; font-family: Roboto-Medium; font-weight: 500; text-align: center; line-height: 25px">
+  <p>Round in progress: {{roundInProgress.toString().toUpperCase()}}</p>
+  <p>Countdown in progress: {{countdownInProgress.toString().toUpperCase()}}</p>
+  <p>Results in progress: {{resultsInProgress.toString().toUpperCase()}}</p>
+  <p>Waiting for round: {{waitingForRound.toString().toUpperCase()}}</p>
+</div>

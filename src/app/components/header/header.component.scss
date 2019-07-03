@@ -1,0 +1,20 @@
+.header {
+  position: absolute;
+  top: 0;
+  height: 45px;
+  width: 100%;
+  border-bottom: 3px solid white;
+  background-color: rgba(29, 33, 36, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .game-name {
+      color: white;
+      font-family: Nunito-Black;
+      font-size: 14px;
+      font-weight: 900;
+      line-height: 17px;
+      text-align: left;
+  }
+}

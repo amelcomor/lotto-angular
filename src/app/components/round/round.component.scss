@@ -1,0 +1,126 @@
+.round {
+    display: flex;
+    height: 100%;
+
+    .left,
+    .right {
+        display: flex;
+        flex: 1;
+        flex-wrap: wrap;
+
+        .fifth {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            .ball-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 70px;
+            }
+        }
+    }
+
+    .center {
+        display: flex;
+        flex-direction: column;
+        flex: 2;
+
+        .center-balls {
+            padding: 0 30px;
+            display: flex;
+
+            .ball-container {
+                width: 22%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 70px;
+            }
+        }
+
+        .ball-container-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+        }
+    }
+
+    .ball {
+        position: relative;
+        border-radius: 100%;
+        background: #0d2547;
+        box-shadow: 0 0 0 2px #0d2547;
+        border: 2px solid #286ed0;
+
+        .ball-value {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 60px;
+            font-family: Roboto-Regular;
+            font-weight: 400;
+            color: white;
+        }
+
+        &.pick {
+            height: 40px;
+            width: 40px;
+            max-width: 40px;
+            max-height: 40px;
+            align-items: center;
+            height: 70px;
+
+            .ball-value {
+                font-size: 14px;
+                font-family: Roboto-Medium;
+                font-weight: 500;
+            }
+        }
+
+        &.center {
+            height: 150px;
+            width: 150px;
+            max-width: 150px;
+            max-height: 150px;
+
+            .description {
+                font-size: 20px;
+                text-align: center;
+                line-height: 25px;
+            }
+
+           &.waiting {
+                background: #133667;
+                box-shadow: 0 0 0 2px #133667;
+                border: 2px solid #133667;
+
+                .ball-value {
+                    color: #7d90ab;
+                }
+            }
+        }
+
+        &.odd {
+            height: 40px;
+            width: 40px;
+            max-width: 40px;
+            max-height: 40px;
+            background: #133667;
+            box-shadow: 0 0 0 2px #133667;
+            border: 2px solid #133667;
+
+            .ball-value {
+                color: #7d90ab;
+                font-size: 14px;
+                font-family: Roboto-Medium;
+                font-weight: 500;
+            }
+        }
+    }
+}
