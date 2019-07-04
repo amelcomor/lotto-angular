@@ -1,14 +1,30 @@
 .wrapper {
     height: 100vh;
     .content {
-        padding: 0 7px;
         position: absolute;
         left: 0;
         right: 0;
-        top: 48px;
-        bottom: 35px;
+        top: 63px;
+        bottom: 60px;
         background-color: #286ED0;
         overflow-y: hidden;
     }
+}
 
+@media screen and (max-width: 1366px) {
+  .wrapper{
+    .content{
+      top:53px;
+      bottom: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper{
+    .content{
+      top:45px;
+      bottom: 35px;
+    }
+  }
 }

@@ -1,54 +1,9 @@
 .round {
-    display: flex;
     height: 100%;
-
-    .left,
-    .right {
-        display: flex;
-        flex: 1;
-        flex-wrap: wrap;
-
-        .fifth {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-
-            .ball-container {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 70px;
-            }
-        }
-    }
-
-    .center {
-        display: flex;
-        flex-direction: column;
-        flex: 2;
-
-        .center-balls {
-            padding: 0 30px;
-            display: flex;
-
-            .ball-container {
-                width: 22%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 70px;
-            }
-        }
-
-        .ball-container-center {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 50%;
-        }
-    }
+    display: flex;
+    padding: 40px 30px;
+    flex-direction: column;
+    box-sizing: border-box;
 
     .ball {
         position: relative;
@@ -56,46 +11,44 @@
         background: #0d2547;
         box-shadow: 0 0 0 2px #0d2547;
         border: 2px solid #286ed0;
+        height: 90px;
+        width: 90px;
+        max-width: 90px;
+        max-height: 90px;
 
         .ball-value {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 60px;
+            font-size: 100px;
             font-family: Roboto-Regular;
             font-weight: 400;
             color: white;
+            line-height: 72px;
         }
 
         &.pick {
-            height: 40px;
-            width: 40px;
-            max-width: 40px;
-            max-height: 40px;
-            align-items: center;
-            height: 70px;
-
             .ball-value {
-                font-size: 14px;
+                font-size: 24px;
                 font-family: Roboto-Medium;
                 font-weight: 500;
             }
         }
 
         &.center {
-            height: 150px;
-            width: 150px;
-            max-width: 150px;
-            max-height: 150px;
+            height: 270px;
+            width: 270px;
+            max-width: 270px;
+            max-height: 270px;
 
             .description {
-                font-size: 20px;
+                font-size: 30px;
                 text-align: center;
-                line-height: 25px;
+                line-height: 40px;
             }
 
-           &.waiting {
+            &.waiting {
                 background: #133667;
                 box-shadow: 0 0 0 2px #133667;
                 border: 2px solid #133667;
@@ -107,20 +60,480 @@
         }
 
         &.odd {
-            height: 40px;
-            width: 40px;
-            max-width: 40px;
-            max-height: 40px;
             background: #133667;
             box-shadow: 0 0 0 2px #133667;
             border: 2px solid #133667;
 
             .ball-value {
                 color: #7d90ab;
-                font-size: 14px;
+                font-size: 24px;
                 font-family: Roboto-Medium;
                 font-weight: 500;
             }
+        }
+    }
+
+    .upper {
+        display: flex;
+
+        .left-placeholder,
+        .right-placeholder {
+            display: flex;
+            flex: 1;
+        }
+
+        .center-placeholder {
+            display: flex;
+            flex: 3;
+
+            .center-balls {
+                width: 100%;
+                padding: 0 30px;
+                display: flex;
+                justify-content: space-between;
+
+                .ball-container {
+                    width: 22%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 70px;
+                }
+            }
+        }
+    }
+
+    .lower {
+        display: flex;
+        height: 100%;
+
+        .left,
+        .right {
+            display: flex;
+            flex: 1;
+            flex-wrap: wrap;
+
+            .fifth {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+
+                .ball-container {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 70px;
+                }
+            }
+        }
+
+        .left {
+            .fifth {
+                align-items: flex-start;
+            }
+        }
+
+        .right {
+            .fifth {
+                align-items: flex-end;
+            }
+        }
+
+        .center {
+            display: flex;
+            flex-direction: column;
+            flex: 2;
+
+            .center-balls {
+                padding: 0 30px;
+                display: flex;
+
+                .ball-container {
+                    width: 22%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 70px;
+                }
+            }
+
+            .ball-container-center {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 50%;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1600px) {
+    .round {
+        padding: 35px 25px;
+
+        .ball {
+            height: 80px;
+            width: 80px;
+            max-width: 80px;
+            max-height: 80px;
+
+            .ball-value {
+                font-size: 90px;
+                line-height: 66px;
+            }
+
+            &.pick {
+                .ball-value {
+                    font-size: 22px;
+                }
+            }
+
+            &.center {
+                height: 250px;
+                width: 250px;
+                max-width: 250px;
+                max-height: 250px;
+
+                .description {
+                    font-size: 28px;
+                    line-height: 38px;
+                }
+            }
+
+            &.odd {
+                .ball-value {
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .round {
+        padding: 20px;
+
+        .ball {
+            height: 70px;
+            width: 70px;
+            max-width: 70px;
+            max-height: 70px;
+
+            .ball-value {
+                font-size: 80px;
+                line-height: 60px;
+            }
+
+            &.pick {
+                .ball-value {
+                    font-size: 20px;
+                }
+            }
+
+            &.center {
+                height: 230px;
+                width: 230px;
+                max-width: 230px;
+                max-height: 230px;
+
+                .description {
+                    font-size: 26px;
+                    line-height: 35px;
+                }
+            }
+
+            &.odd {
+                .ball-value {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .round {
+        .ball {
+            height: 60px;
+            width: 60px;
+            max-width: 60px;
+            max-height: 60px;
+
+            .ball-value {
+                font-size: 70px;
+                line-height: 50px;
+            }
+
+            &.center {
+                height: 210px;
+                width: 210px;
+                max-width: 210px;
+                max-height: 210px;
+
+                .description {
+                    font-size: 24px;
+                    line-height: 32px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .round {
+        .ball {
+            height: 50px;
+            width: 50px;
+            max-width: 50px;
+            max-height: 50px;
+
+            .ball-value {
+                font-size: 65;
+                line-height: 45;
+            }
+
+            &.center {
+                height: 170px;
+                width: 170px;
+                max-width: 170px;
+                max-height: 170px;
+
+                .description {
+                    font-size: 20px;
+                    line-height: 30px;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .round {
+        padding: 15px 15px;
+
+        .ball-container {
+            height: 40px !important;
+        }
+
+        .ball-container-center {
+            height: auto;
+            margin-top: 15px;
+        }
+
+        .ball {
+
+            .ball-value {
+                font-size: 60px;
+            }
+
+            &.pick {
+                height: 38px;
+                width: 38px;
+                max-width: 38px;
+                max-height: 38px;
+
+                .ball-value {
+                    font-size: 14px;
+                    line-height: 19px
+                }
+            }
+
+            &.center {
+                height: 127px;
+                width: 127px;
+                max-width: 127px;
+                max-height: 127px;
+
+                .description {
+                    font-size: 15px;
+                    line-height: 20px;
+                }
+            }
+
+            &.odd {
+                height: 38px;
+                width: 38px;
+                max-width: 38px;
+                max-height: 38px;
+
+                .ball-value {
+                    font-size: 14px;
+                    line-height: 19px
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 639px) {
+    .round {
+
+        //   .fifth {
+        //     padding: 20px 0 0 0 !important;
+        // }
+
+        .lower {
+            .center {
+                flex: 1;
+                align-items: center;
+
+                .center-balls {
+                    width: 100%;
+                    justify-content: space-between;
+                }
+            }
+        }
+
+        .ball-container {
+            height: min-content !important;
+            width: min-content !important;
+        }
+
+        .ball-container-center {
+            height: auto;
+            margin-top: 20px;
+            width: min-content;
+        }
+
+        .ball {
+            .ball-value {
+                font-size: 40px;
+                line-height: 48px;
+            }
+
+            &.pick {
+                height: 30px;
+                width: 30px;
+                max-width: 30px;
+                max-height: 30px;
+                align-items: center;
+
+                .ball-value {
+                    font-size: 12px;
+                    line-height: 18px
+                }
+            }
+
+            &.center {
+                height: 110px;
+                width: 110px;
+                max-width: 110px;
+                max-height: 110px;
+
+                .description {
+                    font-size: 13px;
+                    line-height: 18px;
+                }
+
+            }
+
+            &.odd {
+                height: 30px;
+                width: 30px;
+                max-width: 30px;
+                max-height: 30px;
+
+                .ball-value {
+                    font-size: 12px;
+                    line-height: 18px
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .fifth {
+        padding: 20px 0 0 0 !important;
+    }
+
+    .ball-container-center {
+        height: auto !important;
+        margin-top: 20px;
+        width: min-content;
+    }
+}
+
+
+@media screen and (max-width: 460px) {
+    .round {
+        padding: 10px;
+
+        .lower {
+            .center {
+                flex: 1;
+                align-items: center;
+            }
+        }
+
+        .ball-container {
+            height: min-content !important;
+            width: min-content !important;
+        }
+
+        .ball {
+            .ball-value {
+                font-size: 40px;
+                line-height: 48px;
+            }
+
+            &.pick {
+                height: 22px;
+                width: 22px;
+                max-width: 22px;
+                max-height: 22px;
+
+                .ball-value {
+                    font-size: 10px;
+                    line-height: 17px
+                }
+            }
+
+            &.center {
+                height: 88px;
+                width: 88px;
+                max-width: 88px;
+                max-height: 88px;
+
+                .description {
+                    font-size: 10px;
+                    line-height: 15px;
+                }
+            }
+
+            &.odd {
+                height: 22px;
+                width: 22px;
+                max-width: 22px;
+                max-height: 22px;
+
+                .ball-value {
+                    font-size: 10px;
+                    font-weight: 500;
+                    line-height: 17px
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    .center-placeholder {
+        .center-balls {
+            padding: 0 25px !important;
+        }
+    }
+}
+
+@media screen and (max-width: 359px) {
+    .center-placeholder {
+        .center-balls {
+            padding: 0 8px !important;
         }
     }
 }

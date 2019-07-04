@@ -1,368 +1,381 @@
-<div class="round"
-     style="display: flex;">
+<div class="round">
 
-  <!-- left -->
+<div class="upper">
+  <div class="left-placeholder">
+
+  </div>
+  <div class="center-placeholder" id="center-placeholder">
+
+  </div>
+  <div class="right-placeholder">
+
+  </div>
+</div>
+
+  <div class="lower">
+    <!-- left -->
   <div class="left">
-   <div class="fifth">
-      <div class="ball-container">
-          <div class="ball"
-               [class.pick]="!ballsToShow[5].isOdd"
-               [class.odd]="ballsToShow[5].isOdd">
-            <div class="ball-value">
-              {{ ballsToShow[5].value }}
-            </div>
-          </div>
-        </div>
-        <div class="ball-container">
-          <div class="ball"
-               [class.pick]="!ballsToShow[6].isOdd"
-               [class.odd]="ballsToShow[6].isOdd">
-            <div class="ball-value">
-              {{ ballsToShow[6].value }}
-            </div>
-          </div>
-        </div>
-        <div class="ball-container">
-          <div class="ball"
-               [class.pick]="!ballsToShow[7].isOdd"
-               [class.odd]="ballsToShow[7].isOdd">
-            <div class="ball-value">
-              {{ ballsToShow[7].value }}
-            </div>
-          </div>
-        </div>
-        <div class="ball-container">
-          <div class="ball"
-               [class.pick]="!ballsToShow[8].isOdd"
-               [class.odd]="ballsToShow[8].isOdd">
-            <div class="ball-value">
-              {{ ballsToShow[8].value }}
-            </div>
-          </div>
-        </div>
-        <div class="ball-container">
-          <div class="ball"
-               [class.pick]="!ballsToShow[9].isOdd"
-               [class.odd]="ballsToShow[9].isOdd">
-            <div class="ball-value">
-              {{ ballsToShow[9].value }}
-            </div>
-          </div>
-        </div>
-   </div>
-    <div class="fifth">
-        <div class="ball-container">
-            <div class="ball"
-                 [class.pick]="!ballsToShow[10].isOdd"
-                 [class.odd]="ballsToShow[10].isOdd">
-              <div class="ball-value">
-                {{ ballsToShow[10].value }}
-              </div>
-            </div>
-          </div>
-          <div class="ball-container">
-            <div class="ball"
-                 [class.pick]="!ballsToShow[11].isOdd"
-                 [class.odd]="ballsToShow[11].isOdd">
-              <div class="ball-value">
-                {{ ballsToShow[11].value }}
-              </div>
-            </div>
-          </div>
-          <div class="ball-container">
-            <div class="ball"
-                 [class.pick]="!ballsToShow[12].isOdd"
-                 [class.odd]="ballsToShow[12].isOdd">
-              <div class="ball-value">
-                {{ ballsToShow[12].value }}
-              </div>
-            </div>
-          </div>
-          <div class="ball-container">
-            <div class="ball"
-                 [class.pick]="!ballsToShow[13].isOdd"
-                 [class.odd]="ballsToShow[13].isOdd">
-              <div class="ball-value">
-                {{ ballsToShow[13].value }}
-              </div>
-            </div>
-          </div>
-          <div class="ball-container">
-            <div class="ball"
-                 [class.pick]="!ballsToShow[14].isOdd"
-                 [class.odd]="ballsToShow[14].isOdd">
-              <div class="ball-value">
-                {{ ballsToShow[14].value }}
-              </div>
-            </div>
-          </div>
-    </div>
-    <div class="fifth">
-        <div class="ball-container">
-            <div class="ball"
-                 [class.pick]="!ballsToShow[15].isOdd"
-                 [class.odd]="ballsToShow[15].isOdd">
-              <div class="ball-value">
-                {{ ballsToShow[15].value }}
-              </div>
-            </div>
-          </div>
-          <div class="ball-container">
-            <div class="ball"
-                 [class.pick]="!ballsToShow[16].isOdd"
-                 [class.odd]="ballsToShow[16].isOdd">
-              <div class="ball-value">
-                {{ ballsToShow[16].value }}
-              </div>
-            </div>
-          </div>
-          <div class="ball-container">
-            <div class="ball"
-                 [class.pick]="!ballsToShow[17].isOdd"
-                 [class.odd]="ballsToShow[17].isOdd">
-              <div class="ball-value">
-                {{ ballsToShow[17].value }}
-              </div>
-            </div>
-          </div>
-          <div class="ball-container">
-            <div class="ball"
-                 [class.pick]="!ballsToShow[18].isOdd"
-                 [class.odd]="ballsToShow[18].isOdd">
-              <div class="ball-value">
-                {{ ballsToShow[18].value }}
-              </div>
-            </div>
-          </div>
-          <div class="ball-container">
-            <div class="ball"
-                 [class.pick]="!ballsToShow[19].isOdd"
-                 [class.odd]="ballsToShow[19].isOdd">
-              <div class="ball-value">
-                {{ ballsToShow[19].value }}
-              </div>
-            </div>
-          </div>
-    </div>
-  </div>
-
-  <!-- center -->
-  <div class="center">
-    <div class="center-balls">
-        <div class="ball-container">
-            <div class="ball"
-                 [class.pick]="!ballsToShow[0].isOdd"
-                 [class.odd]="ballsToShow[0].isOdd">
-              <div class="ball-value">
-                {{ ballsToShow[0].value }}
-              </div>
-            </div>
-          </div>
-          <div class="ball-container">
-            <div class="ball"
-                 [class.pick]="!ballsToShow[1].isOdd"
-                 [class.odd]="ballsToShow[1].isOdd">
-              <div class="ball-value">
-                {{ ballsToShow[1].value }}
-              </div>
-            </div>
-          </div>
-          <div class="ball-container">
-            <div class="ball"
-                 [class.pick]="!ballsToShow[2].isOdd"
-                 [class.odd]="ballsToShow[2].isOdd">
-              <div class="ball-value">
-                {{ ballsToShow[2].value }}
-              </div>
-            </div>
-          </div>
-          <div class="ball-container">
-            <div class="ball"
-                 [class.pick]="!ballsToShow[3].isOdd"
-                 [class.odd]="ballsToShow[3].isOdd">
-              <div class="ball-value">
-                {{ ballsToShow[3].value }}
-              </div>
-            </div>
-          </div>
-          <div class="ball-container">
-            <div class="ball"
-                 [class.pick]="!ballsToShow[4].isOdd"
-                 [class.odd]="ballsToShow[4].isOdd">
-              <div class="ball-value">
-                {{ ballsToShow[4].value }}
-              </div>
-            </div>
-          </div>
-    </div>
-    <div class="ball-container-center">
-
-      <div class="ball center"
-      [class.waiting]="waitingForRound"
-      >
-        <div *ngIf="!waitingForRound && !resultsInProgress"
-             class="ball-value">
-          {{ball?.ball}}
-        </div>
-        <div *ngIf="waitingForRound"
-             class="ball-value description">
-          WAITING FOR ROUND
-        </div>
-        <div *ngIf="resultsInProgress"
-             class="ball-value description">
-          RESULTS
-        </div>
-        <div *ngIf="roundStarting"
-             class="ball-value description">
-          ROUND STARTING
-        </div>
+      <div class="fifth">
+         <div class="ball-container">
+             <div class="ball"
+                  [class.pick]="!ballsToShow[5].isOdd"
+                  [class.odd]="ballsToShow[5].isOdd">
+               <div class="ball-value">
+                 {{ ballsToShow[5].value }}
+               </div>
+             </div>
+           </div>
+           <div class="ball-container">
+             <div class="ball"
+                  [class.pick]="!ballsToShow[6].isOdd"
+                  [class.odd]="ballsToShow[6].isOdd">
+               <div class="ball-value">
+                 {{ ballsToShow[6].value }}
+               </div>
+             </div>
+           </div>
+           <div class="ball-container">
+             <div class="ball"
+                  [class.pick]="!ballsToShow[7].isOdd"
+                  [class.odd]="ballsToShow[7].isOdd">
+               <div class="ball-value">
+                 {{ ballsToShow[7].value }}
+               </div>
+             </div>
+           </div>
+           <div class="ball-container">
+             <div class="ball"
+                  [class.pick]="!ballsToShow[8].isOdd"
+                  [class.odd]="ballsToShow[8].isOdd">
+               <div class="ball-value">
+                 {{ ballsToShow[8].value }}
+               </div>
+             </div>
+           </div>
+           <div class="ball-container">
+             <div class="ball"
+                  [class.pick]="!ballsToShow[9].isOdd"
+                  [class.odd]="ballsToShow[9].isOdd">
+               <div class="ball-value">
+                 {{ ballsToShow[9].value }}
+               </div>
+             </div>
+           </div>
       </div>
-    </div>
-  </div>
+       <div class="fifth">
+           <div class="ball-container">
+               <div class="ball"
+                    [class.pick]="!ballsToShow[10].isOdd"
+                    [class.odd]="ballsToShow[10].isOdd">
+                 <div class="ball-value">
+                   {{ ballsToShow[10].value }}
+                 </div>
+               </div>
+             </div>
+             <div class="ball-container">
+               <div class="ball"
+                    [class.pick]="!ballsToShow[11].isOdd"
+                    [class.odd]="ballsToShow[11].isOdd">
+                 <div class="ball-value">
+                   {{ ballsToShow[11].value }}
+                 </div>
+               </div>
+             </div>
+             <div class="ball-container">
+               <div class="ball"
+                    [class.pick]="!ballsToShow[12].isOdd"
+                    [class.odd]="ballsToShow[12].isOdd">
+                 <div class="ball-value">
+                   {{ ballsToShow[12].value }}
+                 </div>
+               </div>
+             </div>
+             <div class="ball-container">
+               <div class="ball"
+                    [class.pick]="!ballsToShow[13].isOdd"
+                    [class.odd]="ballsToShow[13].isOdd">
+                 <div class="ball-value">
+                   {{ ballsToShow[13].value }}
+                 </div>
+               </div>
+             </div>
+             <div class="ball-container">
+               <div class="ball"
+                    [class.pick]="!ballsToShow[14].isOdd"
+                    [class.odd]="ballsToShow[14].isOdd">
+                 <div class="ball-value">
+                   {{ ballsToShow[14].value }}
+                 </div>
+               </div>
+             </div>
+       </div>
+       <div class="fifth">
+           <div class="ball-container">
+               <div class="ball"
+                    [class.pick]="!ballsToShow[15].isOdd"
+                    [class.odd]="ballsToShow[15].isOdd">
+                 <div class="ball-value">
+                   {{ ballsToShow[15].value }}
+                 </div>
+               </div>
+             </div>
+             <div class="ball-container">
+               <div class="ball"
+                    [class.pick]="!ballsToShow[16].isOdd"
+                    [class.odd]="ballsToShow[16].isOdd">
+                 <div class="ball-value">
+                   {{ ballsToShow[16].value }}
+                 </div>
+               </div>
+             </div>
+             <div class="ball-container">
+               <div class="ball"
+                    [class.pick]="!ballsToShow[17].isOdd"
+                    [class.odd]="ballsToShow[17].isOdd">
+                 <div class="ball-value">
+                   {{ ballsToShow[17].value }}
+                 </div>
+               </div>
+             </div>
+             <div class="ball-container">
+               <div class="ball"
+                    [class.pick]="!ballsToShow[18].isOdd"
+                    [class.odd]="ballsToShow[18].isOdd">
+                 <div class="ball-value">
+                   {{ ballsToShow[18].value }}
+                 </div>
+               </div>
+             </div>
+             <div class="ball-container">
+               <div class="ball"
+                    [class.pick]="!ballsToShow[19].isOdd"
+                    [class.odd]="ballsToShow[19].isOdd">
+                 <div class="ball-value">
+                   {{ ballsToShow[19].value }}
+                 </div>
+               </div>
+             </div>
+       </div>
+     </div>
 
-  <!-- right -->
-  <div class="right">
-    <div class="fifth">
-        <div class="ball-container">
-            <div class="ball"
-                 [class.pick]="!ballsToShow[20].isOdd"
-                 [class.odd]="ballsToShow[20].isOdd">
-              <div class="ball-value">
-                {{ ballsToShow[20].value }}
-              </div>
-            </div>
-          </div>
-          <div class="ball-container">
-            <div class="ball"
-                 [class.pick]="!ballsToShow[21].isOdd"
-                 [class.odd]="ballsToShow[21].isOdd">
-              <div class="ball-value">
-                {{ ballsToShow[21].value }}
-              </div>
-            </div>
-          </div>
-          <div class="ball-container">
-            <div class="ball"
-                 [class.pick]="!ballsToShow[22].isOdd"
-                 [class.odd]="ballsToShow[22].isOdd">
-              <div class="ball-value">
-                {{ ballsToShow[22].value }}
-              </div>
-            </div>
-          </div>
-          <div class="ball-container">
-            <div class="ball"
-                 [class.pick]="!ballsToShow[23].isOdd"
-                 [class.odd]="ballsToShow[23].isOdd">
-              <div class="ball-value">
-                {{ ballsToShow[23].value }}
-              </div>
-            </div>
-          </div>
-          <div class="ball-container">
-            <div class="ball"
-                 [class.pick]="!ballsToShow[24].isOdd"
-                 [class.odd]="ballsToShow[24].isOdd">
-              <div class="ball-value">
-                {{ ballsToShow[24].value }}
-              </div>
-            </div>
-          </div>
-    </div>
-    <div class="fifth">
-        <div class="ball-container">
-            <div class="ball"
-                 [class.pick]="!ballsToShow[25].isOdd"
-                 [class.odd]="ballsToShow[25].isOdd">
-              <div class="ball-value">
-                {{ ballsToShow[25].value }}
-              </div>
-            </div>
-          </div>
-          <div class="ball-container">
-            <div class="ball"
-                 [class.pick]="!ballsToShow[26].isOdd"
-                 [class.odd]="ballsToShow[26].isOdd">
-              <div class="ball-value">
-                {{ ballsToShow[26].value }}
-              </div>
-            </div>
-          </div>
-          <div class="ball-container">
-            <div class="ball"
-                 [class.pick]="!ballsToShow[27].isOdd"
-                 [class.odd]="ballsToShow[27].isOdd">
-              <div class="ball-value">
-                {{ ballsToShow[27].value }}
-              </div>
-            </div>
-          </div>
-          <div class="ball-container">
-            <div class="ball"
-                 [class.pick]="!ballsToShow[28].isOdd"
-                 [class.odd]="ballsToShow[28].isOdd">
-              <div class="ball-value">
-                {{ ballsToShow[28].value }}
-              </div>
-            </div>
-          </div>
-          <div class="ball-container">
-            <div class="ball"
-                 [class.pick]="!ballsToShow[29].isOdd"
-                 [class.odd]="ballsToShow[29].isOdd">
-              <div class="ball-value">
-                {{ ballsToShow[29].value }}
-              </div>
-            </div>
-          </div>
-    </div>
-    <div class="fifth">
-        <div class="ball-container">
-            <div class="ball"
-                 [class.pick]="!ballsToShow[30].isOdd"
-                 [class.odd]="ballsToShow[30].isOdd">
-              <div class="ball-value">
-                {{ ballsToShow[30].value }}
-              </div>
-            </div>
-          </div>
-          <div class="ball-container">
-            <div class="ball"
-                 [class.pick]="!ballsToShow[31].isOdd"
-                 [class.odd]="ballsToShow[31].isOdd">
-              <div class="ball-value">
-                {{ ballsToShow[31].value }}
-              </div>
-            </div>
-          </div>
-          <div class="ball-container">
-            <div class="ball"
-                 [class.pick]="!ballsToShow[32].isOdd"
-                 [class.odd]="ballsToShow[32].isOdd">
-              <div class="ball-value">
-                {{ ballsToShow[32].value }}
-              </div>
-            </div>
-          </div>
-          <div class="ball-container">
-            <div class="ball"
-                 [class.pick]="!ballsToShow[33].isOdd"
-                 [class.odd]="ballsToShow[33].isOdd">
-              <div class="ball-value">
-                {{ ballsToShow[33].value }}
-              </div>
-            </div>
-          </div>
-          <div class="ball-container">
-            <div class="ball"
-                 [class.pick]="!ballsToShow[34].isOdd"
-                 [class.odd]="ballsToShow[34].isOdd">
-              <div class="ball-value">
-                {{ ballsToShow[34].value }}
-              </div>
-            </div>
-          </div>
-    </div>
+     <!-- center -->
+     <div class="center" id="center-main">
+       <div class="center-balls" id="center-balls">
+           <div class="ball-container">
+               <div class="ball"
+                    [class.pick]="!ballsToShow[0].isOdd"
+                    [class.odd]="ballsToShow[0].isOdd">
+                 <div class="ball-value">
+                   {{ ballsToShow[0].value }}
+                 </div>
+               </div>
+             </div>
+             <div class="ball-container">
+               <div class="ball"
+                    [class.pick]="!ballsToShow[1].isOdd"
+                    [class.odd]="ballsToShow[1].isOdd">
+                 <div class="ball-value">
+                   {{ ballsToShow[1].value }}
+                 </div>
+               </div>
+             </div>
+             <div class="ball-container">
+               <div class="ball"
+                    [class.pick]="!ballsToShow[2].isOdd"
+                    [class.odd]="ballsToShow[2].isOdd">
+                 <div class="ball-value">
+                   {{ ballsToShow[2].value }}
+                 </div>
+               </div>
+             </div>
+             <div class="ball-container">
+               <div class="ball"
+                    [class.pick]="!ballsToShow[3].isOdd"
+                    [class.odd]="ballsToShow[3].isOdd">
+                 <div class="ball-value">
+                   {{ ballsToShow[3].value }}
+                 </div>
+               </div>
+             </div>
+             <div class="ball-container">
+               <div class="ball"
+                    [class.pick]="!ballsToShow[4].isOdd"
+                    [class.odd]="ballsToShow[4].isOdd">
+                 <div class="ball-value">
+                   {{ ballsToShow[4].value }}
+                 </div>
+               </div>
+             </div>
+       </div>
+       <div class="ball-container-center">
+
+         <div class="ball center"
+         [class.waiting]="waitingForRound"
+         >
+           <div *ngIf="!waitingForRound && !resultsInProgress"
+                class="ball-value">
+             {{ball?.ball}}
+           </div>
+           <div *ngIf="waitingForRound"
+                class="ball-value description">
+             WAITING FOR ROUND
+           </div>
+           <div *ngIf="resultsInProgress"
+                class="ball-value description">
+             RESULTS
+           </div>
+           <div *ngIf="roundStarting"
+                class="ball-value description">
+             ROUND STARTING
+           </div>
+         </div>
+       </div>
+     </div>
+
+     <!-- right -->
+     <div class="right">
+       <div class="fifth">
+           <div class="ball-container">
+               <div class="ball"
+                    [class.pick]="!ballsToShow[20].isOdd"
+                    [class.odd]="ballsToShow[20].isOdd">
+                 <div class="ball-value">
+                   {{ ballsToShow[20].value }}
+                 </div>
+               </div>
+             </div>
+             <div class="ball-container">
+               <div class="ball"
+                    [class.pick]="!ballsToShow[21].isOdd"
+                    [class.odd]="ballsToShow[21].isOdd">
+                 <div class="ball-value">
+                   {{ ballsToShow[21].value }}
+                 </div>
+               </div>
+             </div>
+             <div class="ball-container">
+               <div class="ball"
+                    [class.pick]="!ballsToShow[22].isOdd"
+                    [class.odd]="ballsToShow[22].isOdd">
+                 <div class="ball-value">
+                   {{ ballsToShow[22].value }}
+                 </div>
+               </div>
+             </div>
+             <div class="ball-container">
+               <div class="ball"
+                    [class.pick]="!ballsToShow[23].isOdd"
+                    [class.odd]="ballsToShow[23].isOdd">
+                 <div class="ball-value">
+                   {{ ballsToShow[23].value }}
+                 </div>
+               </div>
+             </div>
+             <div class="ball-container">
+               <div class="ball"
+                    [class.pick]="!ballsToShow[24].isOdd"
+                    [class.odd]="ballsToShow[24].isOdd">
+                 <div class="ball-value">
+                   {{ ballsToShow[24].value }}
+                 </div>
+               </div>
+             </div>
+       </div>
+       <div class="fifth">
+           <div class="ball-container">
+               <div class="ball"
+                    [class.pick]="!ballsToShow[25].isOdd"
+                    [class.odd]="ballsToShow[25].isOdd">
+                 <div class="ball-value">
+                   {{ ballsToShow[25].value }}
+                 </div>
+               </div>
+             </div>
+             <div class="ball-container">
+               <div class="ball"
+                    [class.pick]="!ballsToShow[26].isOdd"
+                    [class.odd]="ballsToShow[26].isOdd">
+                 <div class="ball-value">
+                   {{ ballsToShow[26].value }}
+                 </div>
+               </div>
+             </div>
+             <div class="ball-container">
+               <div class="ball"
+                    [class.pick]="!ballsToShow[27].isOdd"
+                    [class.odd]="ballsToShow[27].isOdd">
+                 <div class="ball-value">
+                   {{ ballsToShow[27].value }}
+                 </div>
+               </div>
+             </div>
+             <div class="ball-container">
+               <div class="ball"
+                    [class.pick]="!ballsToShow[28].isOdd"
+                    [class.odd]="ballsToShow[28].isOdd">
+                 <div class="ball-value">
+                   {{ ballsToShow[28].value }}
+                 </div>
+               </div>
+             </div>
+             <div class="ball-container">
+               <div class="ball"
+                    [class.pick]="!ballsToShow[29].isOdd"
+                    [class.odd]="ballsToShow[29].isOdd">
+                 <div class="ball-value">
+                   {{ ballsToShow[29].value }}
+                 </div>
+               </div>
+             </div>
+       </div>
+       <div class="fifth">
+           <div class="ball-container">
+               <div class="ball"
+                    [class.pick]="!ballsToShow[30].isOdd"
+                    [class.odd]="ballsToShow[30].isOdd">
+                 <div class="ball-value">
+                   {{ ballsToShow[30].value }}
+                 </div>
+               </div>
+             </div>
+             <div class="ball-container">
+               <div class="ball"
+                    [class.pick]="!ballsToShow[31].isOdd"
+                    [class.odd]="ballsToShow[31].isOdd">
+                 <div class="ball-value">
+                   {{ ballsToShow[31].value }}
+                 </div>
+               </div>
+             </div>
+             <div class="ball-container">
+               <div class="ball"
+                    [class.pick]="!ballsToShow[32].isOdd"
+                    [class.odd]="ballsToShow[32].isOdd">
+                 <div class="ball-value">
+                   {{ ballsToShow[32].value }}
+                 </div>
+               </div>
+             </div>
+             <div class="ball-container">
+               <div class="ball"
+                    [class.pick]="!ballsToShow[33].isOdd"
+                    [class.odd]="ballsToShow[33].isOdd">
+                 <div class="ball-value">
+                   {{ ballsToShow[33].value }}
+                 </div>
+               </div>
+             </div>
+             <div class="ball-container">
+               <div class="ball"
+                    [class.pick]="!ballsToShow[34].isOdd"
+                    [class.odd]="ballsToShow[34].isOdd">
+                 <div class="ball-value">
+                   {{ ballsToShow[34].value }}
+                 </div>
+               </div>
+             </div>
+       </div>
+     </div>
   </div>
 
 </div>

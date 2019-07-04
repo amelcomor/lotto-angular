@@ -1,4 +1,4 @@
-import { Component, OnChanges, Input } from '@angular/core';
+import { Component, OnChanges, Input, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-round',
