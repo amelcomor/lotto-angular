@@ -1,14 +1,13 @@
-<div class="wrapper" *ngIf="!loading">
+<div class="wrapper"
+     *ngIf="!loading">
   <app-header></app-header>
 
   <div class="content">
-    <!-- <app-countdown *ngIf="countdownInProgress"
+    <app-countdown *ngIf="countdownInProgress"
                    [countdown]="countdown"
-                   [counterTotal]="counterTotal"></app-countdown> -->
+                   [counterTotal]="counterTotal"></app-countdown>
 
-                   <!-- *ngIf="roundInProgress || resultsInProgress || waitingForRound || roundStarting" -->
-    <app-round
-    [ngStyle]="{'display': roundInProgress || resultsInProgress || waitingForRound || roundStarting?'':'none'}"
+    <app-round [ngStyle]="{'display': roundInProgress || resultsInProgress || waitingForRound || roundStarting?'':'none'}"
                [odds]="odds"
                [waitingForRound]="waitingForRound"
                [resultsInProgress]="resultsInProgress"
