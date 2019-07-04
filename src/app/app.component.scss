@@ -1,5 +1,9 @@
 .wrapper {
     height: 100vh;
+    min-width: 100%;
+    min-height: 400px;
+    position: absolute;
+
     .content {
         position: absolute;
         left: 0;
@@ -11,20 +15,48 @@
     }
 }
 
-@media screen and (max-width: 1366px) {
-  .wrapper{
-    .content{
-      top:53px;
-      bottom: 50px;
+@media screen and (max-width: 1600px) {
+    .wrapper {
+        min-height: 780px;
     }
-  }
+}
+
+@media screen and (max-width: 1366px) {
+    .wrapper {
+        min-height: 670px;
+
+        .content {
+            top: 53px;
+            bottom: 50px;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .wrapper {
+        min-height: 600px;
+    }
+}
+
+@media screen and (max-width: 859px) {
+    .wrapper {
+        min-height: 500px;
+    }
 }
 
 @media screen and (max-width: 768px) {
-  .wrapper{
-    .content{
-      top:45px;
-      bottom: 35px;
+    .wrapper {
+        min-height: 360px;
+
+        .content {
+            top: 45px;
+            bottom: 35px;
+        }
     }
-  }
+}
+
+@media screen and (max-width: 460px) {
+    .wrapper {
+        min-height: 305px;
+    }
 }

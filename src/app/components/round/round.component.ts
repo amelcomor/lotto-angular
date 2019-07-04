@@ -52,6 +52,12 @@ export class RoundComponent implements OnChanges {
   ];
 
   ngOnChanges() {
+    if(this.roundStarting){
+      for(const ball of this.ballsToShow){
+        ball.value=0;
+        ball.isOdd=true;
+      }
+    }
     if (!this.results || !this.results.length) {
       if (this.ball) {
         for (let i = 0; i < this.ballsToShow.length; i++) {
@@ -70,7 +76,7 @@ export class RoundComponent implements OnChanges {
         }
       }
 
-      if (this.balls) {
+      if (this.balls && this.balls.length) {
         for (let i = 0; i < this.balls.length; i++) {
           this.ballsToShow[i].value = this.balls[i].ball;
           this.ballsToShow[i].isOdd = false;

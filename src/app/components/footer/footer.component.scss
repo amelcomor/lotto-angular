@@ -118,8 +118,23 @@
     }
 }
 
-// @media screen and (max-width: 360px) {
-//     .footer {
-//         padding: 0 5xp;
-//     }
-// }
+@media screen and (max-width: 500px) {
+    .right {
+        flex: 1 !important;
+    }
+
+    .left {
+        flex: 2 !important;
+    }
+}
+
+@media screen and (max-width: 360px) {
+  .right {
+      flex: 1 !important;
+      padding-left: 30px;
+  }
+
+  .left {
+      flex: 1 !important;
+  }
+}

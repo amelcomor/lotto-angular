@@ -35,7 +35,6 @@ export class AppComponent implements OnInit {
         switch (socketData.type) {
           case 'state':
             if (socketData.data.type == 'countdown') {
-              console.log('COUNTDOWN');
               this.odds = socketData.data.odds;
               this.waitingForRound = true;
               this.roundInProgress = false;
@@ -43,7 +42,6 @@ export class AppComponent implements OnInit {
               this.resultsInProgress = false;
             }
             if (socketData.data.type == 'ball') {
-              console.log('BALL');
               this.balls = socketData.data.balls;
               this.odds = socketData.data.odds;
               this.roundInProgress = true;
@@ -53,7 +51,6 @@ export class AppComponent implements OnInit {
               this.roundStarting = false;
             }
             if (socketData.data.type == 'new') {
-              console.log('NEW');
               this.odds = socketData.data.odds;
               this.balls = socketData.data.balls;
               this.roundInProgress = false;
@@ -63,7 +60,6 @@ export class AppComponent implements OnInit {
               this.roundStarting = true;
             }
             if (socketData.data.type == 'results') {
-              console.log('RESULTS');
               this.results = socketData.data.balls;
               this.roundInProgress = false;
               this.waitingForRound = false;
@@ -72,7 +68,6 @@ export class AppComponent implements OnInit {
             }
             break;
           case 'new':
-            console.log('NEW');
             this.balls = [];
             this.results = [];
             this.odds = socketData.data.odds;
@@ -84,14 +79,12 @@ export class AppComponent implements OnInit {
             this.roundStarting = true;
             break;
           case 'ball':
-            console.log('BALL');
             this.currentBall = socketData.data;
             this.waitingForRound = false;
             this.roundStarting = false;
             this.roundInProgress = true;
             break;
           case 'results':
-            console.log('RESULTS');
             this.results = socketData.data.balls;
             this.roundInProgress = false;
             this.countdownInProgress = false;
@@ -99,7 +92,6 @@ export class AppComponent implements OnInit {
             this.resultsInProgress = true;
             break;
           case 'countdown':
-            console.log('COUNTDOWN');
             this.countdown = socketData.data.delay;
             this.counterTotal = socketData.data.delay;
             this.roundInProgress = false;

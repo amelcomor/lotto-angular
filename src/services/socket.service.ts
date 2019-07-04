@@ -9,11 +9,31 @@ export class SocketService {
   private socket: any;
   private socketDataSubject = new Subject<any>();
   public socketData$ = this.socketDataSubject.asObservable();
-  // socketUrlRequestInProgress = false;
 
   constructor(private http: HttpClient) {
-    // this.createSocket();
-    this.socket = io(environment.socketUrl, { query: environment.configQuery });
+    this.createSocketConnection();
+
+    // HARDCODED WORKING SOCKET URL, TO BE USED MANUALLY IN CASE ALL OTHERS FAIL
+    // this.getSocket('https://gcm-fra-staging-2.7platform.com:8008');
+  }
+
+  createSocketConnection() {
+    this.getSocketUrl().subscribe(
+      (response: any) => {
+        this.getSocket(response.url);
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }
+
+  getSocketUrl() {
+    return this.http.get(environment.configUrl);
+  }
+
+  getSocket(url) {
+    this.socket = io(url, { query: environment.configQuery });
     this.socket.on('connect', () => {
       this.socket.emit('subscribe', {
         channel: environment.configChannel,
@@ -23,6 +43,10 @@ export class SocketService {
           playerUuid: null
         }
       });
+    });
+    this.socket.on('error', () => {
+      this.socket.close();
+      this.createSocketConnection();
     });
     this.socket.on(environment.configChannel, response => {
       if (response) {
@@ -34,81 +58,4 @@ export class SocketService {
       }
     });
   }
-
-  // createSocket() {
-  //   if (!this.socketUrlRequestInProgress) {
-  //     this.socketUrlRequestInProgress = true;
-  //     this.http.get(environment.configUrl).subscribe(
-  //       (res: any) => {
-  //         this.validateSocket(res.url).subscribe(
-  //           socketData => {
-  //             this.socketUrlRequestInProgress = false;
-  //             console.log('socket valid', socketData);
-  //           },
-  //           err => {
-  //             console.log('socket invalid: ', err);
-  //             this.socketUrlRequestInProgress = false;
-  //             if(this.socket.connected){
-  //               this.socket.disconnect();
-  //             }
-  //             this.socket=undefined;
-  //             this.createSocket();
-  //           }
-  //         );
-  //       },
-  //       err => {
-  //         this.socketUrlRequestInProgress = false;
-  //       }
-  //     );
-  //   }
-  // }
-
-  // validateSocket(socketUrl) {
-  //   return new Observable(observer => {
-  //     this.socket = io(socketUrl, { query: environment.configQuery });
-  //     console.log(this.socket);
-  //     this.socket.on('connect', () => {
-  //       console.log('SOCKET CONNECTED');
-  //       this.socket.emit('subscribe', {
-  //         channel: environment.configChannel,
-  //         subChannels: {
-  //           language: 'en',
-  //           deliveryPlatform: 'Web',
-  //           playerUuid: null
-  //         }
-  //       });
-  //       observer.next();
-  //     });
-  //     this.socket.on(environment.configChannel, response => {
-  //       if (response) {
-  //         observer.next({
-  //           isConnected: this.socket.connected,
-  //           data: response.data,
-  //           type: response.type
-  //         });
-  //       }
-  //     });
-  //     this.socket.on('error', () => {
-  //       this.socket.off('connect_error');
-  //       this.socket.off('error');
-  //       observer.error('error');
-  //     });
-  //     // this.socket.on('disconnect', () => {
-  //     //   debugger;
-  //     //   reject('disconnect');
-  //     // });
-  //     // this.socket.on('connect_failed', () => {
-  //     //   debugger;
-  //     //   if(this.socket.connected){
-  //     //     this.socket.disconnect();
-  //     //   }
-  //     //   observer.error('connect failed');
-  //     // });
-  //     this.socket.on('connect_error', () => {
-  //       this.socket.off('connect_error');
-  //       this.socket.off('error');
-  //       observer.error('connect error');
-  //     });
-  //   });
-  // }
 }
