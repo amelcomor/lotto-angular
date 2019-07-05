@@ -10,8 +10,8 @@ export class FooterComponent implements OnInit, OnChanges {
   @Input() ball: any;
   @Input() roundInProgress: boolean;
   @Input() countdownInProgress: boolean;
-  @Input() resultsInProgress:boolean;
-  @Input() roundStarting:boolean;
+  @Input() resultsInProgress: boolean;
+  @Input() roundStarting: boolean;
   @Input() balls: any[];
   @Input() results: any[];
   oddTotal: number;
@@ -23,8 +23,8 @@ export class FooterComponent implements OnInit, OnChanges {
   constructor() {}
 
   ngOnInit() {
-    if(this.resultsInProgress){
-      this.balls=this.results;
+    if (this.resultsInProgress) {
+      this.balls = this.results;
     }
     this.initData();
     if (this.balls && this.balls.length > 0) {
@@ -75,11 +75,11 @@ export class FooterComponent implements OnInit, OnChanges {
       this.initData();
     } else {
       if (this.odds && this.evens && this.ball) {
-        if (this.odds.length < this.oddTotal && this.ball.ball % 2 === 0) {
+        if (this.odds.length < this.oddTotal && this.ball.ball % 2 !== 0) {
           this.odds.push(this.ball.ball);
         }
 
-        if (this.evens.length < this.evenTotal && this.ball.ball % 2 !== 0) {
+        if (this.evens.length < this.evenTotal && this.ball.ball % 2 === 0) {
           this.evens.push(this.ball.ball);
         }
 

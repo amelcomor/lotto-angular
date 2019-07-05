@@ -51,7 +51,6 @@ export class SocketService {
     this.socket.on(environment.configChannel, response => {
       if (response) {
         this.socketDataSubject.next({
-          isConnected: this.socket.connected,
           data: response.data,
           type: response.type
         });

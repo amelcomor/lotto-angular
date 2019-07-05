@@ -9,7 +9,6 @@ import { take } from 'rxjs/operators';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  isConnected: boolean;
   countdownInProgress: boolean;
   roundInProgress: boolean;
   waitingForRound: boolean;
@@ -31,7 +30,6 @@ export class AppComponent implements OnInit {
     this.init = true;
     this.socketService.socketData$.subscribe(
       socketData => {
-        this.isConnected = socketData.isConnected;
         switch (socketData.type) {
           case 'state':
             if (socketData.data.type == 'countdown') {

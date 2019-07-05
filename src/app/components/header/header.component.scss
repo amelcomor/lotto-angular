@@ -1,38 +1,40 @@
 .header {
-  position: absolute;
-  top: 0;
-  height: 60px;
-  width: 100%;
-  border-bottom: 3px solid white;
-  background-color: rgba(29, 33, 36, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: absolute;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    border-bottom: 3px solid white;
+    background-color: #1f3047;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  .game-name {
-      color: white;
-      font-family: Nunito-Black;
-      font-size: 20px;
-      font-weight: 900;
-      line-height: 17px;
-      text-align: left;
-  }
+    .game-name {
+        color: white;
+        font-family: Nunito-Black;
+        font-size: 20px;
+        font-weight: 900;
+        line-height: 17px;
+        text-align: left;
+    }
 }
 
 @media screen and (max-width: 1366px) {
-  .header{
-    height: 50px;
-    .game-name{
-      font-size: 18px;
+    .header {
+        height: 50px;
+
+        .game-name {
+            font-size: 18px;
+        }
     }
-  }
 }
 
 @media screen and (max-width: 768px) {
-  .header{
-    height: 42px;
-    .game-name{
-      font-size: 14px;
+    .header {
+        height: 42px;
+
+        .game-name {
+            font-size: 14px;
+        }
     }
-  }
 }

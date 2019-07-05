@@ -5,7 +5,7 @@
     bottom: 0;
     height: 60px;
     width: 100%;
-    background-color: rgba(29, 33, 36, 0.8);
+    background-color: #1f3047;
     color: white;
     font-weight: 400;
     font-family: Roboto-Regular;
@@ -129,12 +129,12 @@
 }
 
 @media screen and (max-width: 360px) {
-  .right {
-      flex: 1 !important;
-      padding-left: 30px;
-  }
+    .right {
+        flex: 1 !important;
+        padding-left: 30px;
+    }
 
-  .left {
-      flex: 1 !important;
-  }
+    .left {
+        flex: 1 !important;
+    }
 }
