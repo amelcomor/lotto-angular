@@ -1,28 +1,40 @@
-<div class="wrapper"
-     *ngIf="!loading">
+<div class="wrapper" *ngIf="!loading">
   <app-header></app-header>
 
   <div class="content">
-    <app-countdown *ngIf="countdownInProgress"
-                   [countdown]="countdown"
-                   [counterTotal]="counterTotal"></app-countdown>
+    <app-countdown
+      *ngIf="countdownInProgress"
+      [countdown]="countdown"
+      [counterTotal]="counterTotal"
+    ></app-countdown>
 
-    <app-round [ngStyle]="{'display': roundInProgress || resultsInProgress || waitingForRound || roundStarting?'':'none'}"
-               [odds]="odds"
-               [waitingForRound]="waitingForRound"
-               [resultsInProgress]="resultsInProgress"
-               [roundStarting]="roundStarting"
-               [results]="results"
-               [ball]="currentBall"
-               [balls]="balls"></app-round>
+    <app-round
+      [ngStyle]="{
+        display:
+          roundInProgress ||
+          resultsInProgress ||
+          waitingForRound ||
+          roundStarting
+            ? ''
+            : 'none'
+      }"
+      [odds]="odds"
+      [waitingForRound]="waitingForRound"
+      [resultsInProgress]="resultsInProgress"
+      [roundStarting]="roundStarting"
+      [results]="results"
+      [ball]="currentBall"
+      [balls]="balls"
+    ></app-round>
   </div>
 
-  <app-footer [balls]="balls"
-              [roundInProgress]="roundInProgress"
-              [resultsInProgress]="resultsInProgress"
-              [results]="results"
-              [roundStarting]="roundStarting"
-              [countdownInProgress]="countdownInProgress"
-              [ball]="currentBall"></app-footer>
+  <app-footer
+    [balls]="balls"
+    [roundInProgress]="roundInProgress"
+    [resultsInProgress]="resultsInProgress"
+    [results]="results"
+    [roundStarting]="roundStarting"
+    [countdownInProgress]="countdownInProgress"
+    [ball]="currentBall"
+  ></app-footer>
 </div>
-
